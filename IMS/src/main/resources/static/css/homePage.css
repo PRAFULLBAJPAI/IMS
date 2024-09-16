@@ -1,0 +1,477 @@
+@import
+	url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap')
+	;
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	scrollbar-width: none;
+	/* 	font-family: 'Montserrat' , sans-serif;
+ */
+}
+
+:root {
+	--red: #BF3131;
+	--white: #fff;
+	--grey: #f5f5f5;
+	--black1: #222;
+	--black2: #999;
+}
+
+body {
+	min-height: 100vh;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	background-color: #DCECFE;
+}
+
+.cardHeader {
+	display: flex;
+	justify-content: space-around;
+	align-items: flex-start;
+}
+.container {
+	position: relative;
+	width: 100%;
+	font-size: 15px;
+}
+
+.navigation {
+	position: fixed;
+	width: 18%; /* Adjust according to your preference */
+	height: 100%;
+	background: var(--red);
+	border-left: 10px solid var(--red);
+	transition: 0.5s;
+	overflow: hidden;
+}
+
+.navigation.active {
+	width: 6%; /* Adjust according to your preference */
+}
+
+.navigation ul {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+
+.navigation ul li {
+	position: relative;
+	width: 100%;
+	list-style: none;
+	border-top-left-radius: 30px;
+	border-bottom-left-radius: 30px;
+}
+
+.navigation ul li:hover, .navigation ul li.hovered {
+	background: var(--white);
+}
+
+.navigation ul li:nth-child(1) {
+	margin-bottom: 40px;
+	pointer-events: none;
+}
+
+.navigation ul li a {
+	position: relative;
+	display: block;
+	width: 100%;
+	display: flex;
+	text-decoration: none;
+	color: var(--white);
+}
+
+.navigation ul li:hover a, .navigation ul li.hovered a {
+	color: var(--red);
+}
+
+.navigation ul li a .icon {
+	position: relative;
+	display: block;
+	min-width: 60px;
+	height: 60px;
+	line-height: 60px;
+	text-align: center;
+}
+
+.navigation ul li a .title {
+	position: relative;
+	display: block;
+	padding: 0 10px;
+	height: 60px;
+	line-height: 60px;
+	text-align: start;
+	white-space: nowrap;
+}
+
+/*CURVE OUTSIDE NAVBAR*/
+.navigation ul li:hover a::before, .navigation ul li.hovered a::before {
+	content: '';
+	position: absolute;
+	right: 0;
+	top: -50px;
+	width: 50px;
+	height: 50px;
+	background: transparent;
+	border-radius: 50%;
+	box-shadow: 35px 35px 0 10px var(--white);
+	pointer-events: none;
+}
+
+.navigation ul li:hover a::after, .navigation ul li.hovered a::after {
+	content: '';
+	position: absolute;
+	right: 0;
+	bottom: -50px;
+	width: 50px;
+	height: 50px;
+	background: transparent;
+	border-radius: 50%;
+	box-shadow: 35px -35px 0 10px var(--white);
+	pointer-events: none;
+}
+
+/*MAIN STYLING */
+.main {
+	position: absolute;
+	width: calc(100% - 18%); /* Adjust according to your preference */
+	left: 18%; /* Ensure it starts after the navigation */
+	min-height: 100vh;
+	background: var(--white);
+	transition: 0.5s;
+}
+
+.main.active {
+	width: calc(100% - 5%); /* Adjust according to your preference */
+	left: 5%; /* Ensure it starts after the navigation */
+}
+
+.topbar {
+	width: 100%;
+	height: 60px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 10px;
+	box-shadow: 0 7px 25px rgba(0, 0, 0, 0.15);
+}
+
+.toggle {
+	position: relative;
+	top: 0;
+	width: 60px;
+	height: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 1.5em;
+	cursor: pointer;
+}
+
+.user {
+	position: relative;
+	top: 5px;
+	right: 20px;
+	width: 40px;
+	height: 40px;
+	overflow: hidden;
+	cursor: pointer;
+	z-index: 9999;
+}
+
+.user i {
+	position: absolute;
+	top: 30%;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.cardBox {
+	position: relative;
+	width: 100%;
+	padding: 20px;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+}
+
+.cardBox .card {
+	position: relative;
+	background: var(--white);
+	padding: 30px;
+	padding-bottom: 20px;
+	border-radius: 10px;
+	display: flex;
+	margin-right: 5%;
+	margin-bottom:3%;
+	justify-content: space-between;
+	cursor: pointer;
+	box-shadow: 10px 10px 10px grey;
+}
+
+.cardBox .card .numbers {
+	position: relative;
+	font-weight: 500;
+	font-size: 2em;
+	color: var(--black1);
+}
+
+.cardBox .card .cardName {
+	color: var(--black1);
+	font-size: 1em;
+	font-weight: 600;
+	margin-top: 2%;
+}
+
+.cardBox .card .iconBox {
+	font-size: 2em;
+	color: var(--black1);
+}
+
+
+/*Charts and Bars*/
+.graphBox {
+	position: relative;
+	width: 100%;
+	padding: 20px;
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	grid-gap: 30px;
+	min-height: 200px;
+}
+
+.graphBox .box {
+	position: relative;
+	padding: 20px;
+	width: 99%;
+	box-shadow: 0 7px 25px rgba(0, 0, 0, 0.15);
+	border-radius: 20px;
+}
+
+.details {
+	position: relative;
+	width: 99%;
+	padding: 20px;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-gap: 20px;
+}
+
+.details .recentData {
+	position: relative;
+	display: grid;
+	min-height: 200px;
+	background: var(--white);
+	padding: 10px;
+	padding-left:0px;
+	box-shadow: 0 7px 25px rgba(0, 0, 0, 0.12);
+	border-radius: 10px;
+	overflow-x:scroll;
+	/* display: block;
+    max-height: 400px;
+    overflow-y: auto; */
+}
+
+
+
+
+.btn {
+	position: relative;
+	padding: 5px 10px;
+	background: var(--red);
+	text-decoration: none;
+	color: var(--white);
+	border-radius: 6px;
+}
+
+.details table {
+	width: 100%;
+	border-collapse: collapse;
+	margin-top: 10px;
+}
+
+.details table thead td {
+	font-weight: 600;
+}
+
+.details .recentData table tr {
+	color: var(--black1);
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.details .recentData table tr:last-child {
+	border-bottom: none;
+}
+
+.details .recentData table tr:hover {
+	background: #DCECFE;
+	color: var(--black);
+}
+
+.details .recentData table tr td {
+	padding: 10px;
+}
+
+.details.recentData table tr td:last-child {
+	text-align: end;
+}
+
+.details .recentData table tr td:nth-child(2) {
+	text-align: end;
+}
+
+.details .recentData table tr td:nth-child(3) {
+	text-align: center;
+}
+
+
+/*************************************************RESPONSIVENESS OF DASHBOARD*******************************************************/
+@media ( min-width :1700px) {
+	.details .recentData table {
+		margin-top: -10%;
+	}
+}
+
+@media ( max-width :991px) {
+	.graphBox {
+		grid-template-columns: 1fr;
+		height: auto;
+	}
+	.navigation {
+		left: -300px;
+	}
+	.navigation.active {
+		width: 300px;
+		left: 0;
+	}
+	.details .recentData table {
+		margin-top: -12%;
+	}
+	.main {
+		width: 100%;
+		left: 0;
+	}
+	.main.active {
+		left: 300px;
+	}
+	.cardBox {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	.card {
+		margin-top: 1%;
+	}
+}
+
+@media ( max-width :768px) {
+	.details .recentData table {
+		margin-top: 0;
+	}
+	.card {
+		margin-top: 1%;
+	}
+	.details {
+		grid-template-columns: repeat(1, 1fr);
+	}
+	.recentData {
+		overflow-x: auto;
+	}
+	.status.inprogress {
+		white-space: nowrap;
+	}
+}
+
+@media ( max-width :480px) {
+	.details .recentData table {
+		margin-top: 0;
+	}
+	.card {
+		margin-top: 1%;
+	}
+	/* .cardBox {
+		margin-top: 1%;
+		grid-template-columns: repeat(1, 1fr);
+	} */
+	.cardHeader h2 {
+		font-size: 16px;
+	}
+	.user {
+		min-width: 40px;
+	}
+	.navigation {
+		width: 100%;
+		left: -100%;
+		z-index: 1000;
+	}
+	.navigation.active {
+		width: 100%;
+		left: 0;
+	}
+	.toggle {
+		z-index: 10001;
+	}
+	.main.active.toggle {
+		position: fixed;
+		right: 0;
+		left: initial;
+		color: var(--white);
+	}
+}
+
+.iconBox img {
+	height: 50px;
+	width: 50px;
+}
+
+.tableWrapper {
+	overflow-x: auto;
+    max-height: 300px;
+    width: 97%;
+    margin-left: 2%;
+}
+
+#productTable {
+	width: 100%;
+	margin-top: -5px;
+	table-layout: fixed; 
+}
+
+#productTable thead th {
+	position: sticky;
+	top: -1px;
+	background-color: #1649a2;
+	color:white;
+	z-index: 1;
+}
+
+#productTable tbody tr td {
+	font-size: 14px;
+}
+
+.table-bordered th {
+	border: 0;
+}
+
+
+.table-responsive2 {
+	display: block;
+	width: 100%;
+	-webkit-overflow-scrolling: touch
+}
+
+@media ( max-width :480px) {
+	.cardBox .card {
+    position: relative;
+    background: var(--white);
+    padding: 10px;
+    border-radius: 10px;
+    margin-right: 5%;
+    margin-bottom: 3%;
+    justify-content: space-between;
+    cursor: pointer;
+    box-shadow: 10px 10px 10px grey;
+}
+}

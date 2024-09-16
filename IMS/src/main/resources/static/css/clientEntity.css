@@ -1,0 +1,425 @@
+/*--------------------------------SCROLL BAR----------------------------------------------------*/
+  * {
+    scrollbar-width: none;
+    scrollbar-color: #6595ff #ffffff;
+  }
+
+  *::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #ffffff;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #6595ff;
+    border-radius: 10px;
+    border: 1px solid #ffffff;
+  }
+ /*---------------------------------TRAINING MASTER-----------------------------------------------*/
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    color: #1649A2;
+    text-align: left;
+      background-color: #DCECFE;
+    overflow-x: hidden;
+   
+}
+
+.card-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-container .card {
+	
+    flex: 1;
+    margin: 1%;
+    position: relative;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 2px solid #1649A2;
+    border-radius: 5px;
+    box-shadow: 20px 20px 10px grey;
+}
+
+
+
+.card-body {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    
+}
+
+.card-header {
+    padding:0;
+    margin-bottom: 0;
+    background-color: rgba(0, 0, 0, 0.03);
+    border-bottom: 2px solid #1649A2;
+    text-align: center;
+}
+
+.dataTables_wrapper{
+margin:2%;
+}
+
+/*
+.get-in-touch {
+  max-width: 900px;
+  margin: 5px auto;
+  position: relative;
+
+}
+
+.btn{
+	width:15%;
+	margin-left:2%;
+	background-color: #6595ff;
+	color:#ffffff;
+}
+
+.btn:hover{
+	background-color: #1649A2;
+	color: #6595ff;
+}
+
+
+.contact-form .form-field {
+  position: relative;
+  margin: 20px 0;
+}
+.contact-form .input-text {
+  display: block;
+  width: 100%;
+  height: 30px;
+  border-width: 0 0 2px 0;
+  border-color:#1649A2;
+  font-size: 14px;
+  line-height: 10px;
+  font-weight: 400;
+}
+
+.contact-form .input-text:focus {
+  outline: none;
+}
+.contact-form .input-text:focus + .label,
+.contact-form .input-text.not-empty + .label {
+  -webkit-transform: translateY(-8px);
+          transform: translateY(-8px);
+}
+.contact-form .label {
+  position: absolute;
+  left: 15px;
+  bottom: 15px;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  color: #1649A2;
+  cursor: text;
+  transition: -webkit-transform .2s ease-in-out;
+  transition: transform .2s ease-in-out;
+  transition: transform .2s ease-in-out, 
+  -webkit-transform .2s ease-in-out;
+}
+
+.contact-form .submit-btn {
+  display: inline-block;
+  background-color:#6595ff;
+  color: #fff;
+  text-transform: uppercase;
+  border-radius: 5px;
+  font-size: 12px;
+  padding: 5px 10px;
+  border: none;
+  width:90px;
+  cursor: pointer;
+}
+
+.contact-form .submit-btn:hover{
+	background-color: #1649A2;
+}
+*/
+table th{
+	background-color: #1649A2;
+	color:#ffffff;
+}
+/*-------------------------------------- MODAL STYLING---------------------------------------------------*/
+
+.modal-dialog {
+    max-width: 100% !important;
+    margin-top:0;
+    overflow-y: hidden
+}
+
+.modal-body{
+    height: 100vh;
+    overflow-y: auto;
+
+}
+
+.modal-content {
+	 width:100%; background: rgba(255, 255, 255, 0.5); backdrop-filter: blur(10px); border: none;
+    margin-top:0; height:100vh; overflow-y:auto;
+}
+
+.modal-header{
+	height:50px;
+}
+
+
+/*-----------------------------------MEDIA QUERY-----------------------------------------------*/
+
+@media (max-width:500px){
+	#addEmployeeModalButton{
+		font-size:11px;
+	}
+}
+
+
+
+
+/*-----------------------------------------EMPLOYEE MASTER NEW---------------------------------*/
+
+
+
+/* .form-group {
+	position: relative;
+}
+
+ .form-control {
+	border: none;
+	height: 25px;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	font-size: 12px;
+	color: #090a0b;
+	font-weight: 600;
+	background: #f2f1f1;
+	border-radius: 4px;
+}
+
+.booking-form .form-control::-webkit-input-placeholder {
+	color: #b1b6bd;
+}
+
+.form-control:-ms-input-placeholder {
+	color: #b1b6bd;
+}
+
+ .form-control::placeholder {
+	color: #b1b6bd;
+}
+
+ input[type="date"].form-control:invalid {
+	color: #b1b6bd;
+}
+
+ select.form-control {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+
+
+
+
+ .form-label {
+	color: #184c8f;
+	display: block;
+	font-weight: 600;
+	height: 12px;
+	line-height: 12px;
+	font-size: 12px;
+	position: relative;
+	margin-top: 10px;
+}
+
+.booking-form .form-label:after {
+	content: '';
+	position: absolute;
+	left: 10px;
+	top: -10px;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 10px 10px 0 10px;
+	border-color: #f2f1f1 transparent transparent transparent;
+}
+
+.booking-form .form-btn {
+	margin-bottom: 2px;
+}
+
+.booking-form .submit-btn {
+	background: #184c8f;
+	border: none;
+	font-weight: 400;
+	text-transform: uppercase;
+	height: 22px;
+	font-size: 11px;
+	width: 10%;
+	color: #fff;
+	border-radius: 4px;
+	display: inline;
+}*/
+
+/*-----------------------------------------------EXAMPLE--------------------------------*/
+
+
+.custom-field {
+  position: relative;
+  font-size: 14px;
+  border-top: 10px solid transparent;
+  margin-bottom: 0;
+  display: inline-block;
+  --field-padding: 2px;
+}
+
+.custom-field input{
+  border: none;
+  -webkit-appearance: none;
+  -ms-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: #f2f2f2;
+  border-radius: 3px;
+  outline: none;
+  font-size: 15px;
+}
+
+.custom-field .placeholder {
+  position: absolute;
+  left:25px;
+  width: calc(100% - (var(--field-padding) * 1));
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  top:15px;
+  line-height: 100%;
+  transform: translateY(-50%);
+  color: #aaa;
+  transition: 
+    top 0.3s ease,
+    color 0.3s ease,
+    font-size 0.3s ease;
+}
+
+.custom-field input.dirty + .placeholder,
+.custom-field input:focus + .placeholder,
+.custom-field input:not(:placeholder-shown) + .placeholder {
+  top: -10px;
+  font-size: 15px;
+  color: #222;
+}
+
+
+
+
+
+/* ONE */
+.custom-field.one input {
+  background: none;
+  border: 1px solid #6595ff;
+  transition: border-color 0.3s ease;
+}
+
+ .row .select {
+	 
+	border:1.5px solid #6595ff;
+}
+
+
+
+.row .select:focus,
+.custom-field.one input:not(:placeholder-shown),
+.custom-field.one input:focus {
+  border-color: #1649A2;
+  transition-delay: 0.1s
+}
+
+.custom-field.one input.dirty + .placeholder,
+.custom-field.one input:not(:placeholder-shown) + .placeholder,
+.custom-field.one input:focus + .placeholder {
+  top: 0;
+  font-size: 14px;
+  color: #1649A2;
+  background: #fff;
+  width: auto
+}
+
+
+
+
+
+
+/*------------------------------------------END------------------------------------------*/
+
+.form-btn .btn {
+	float: right;
+	margin-left:3px;
+	margin-bottom: 3px;
+	height:30px;
+	font-size:13px;
+	font-weight: 600;
+}
+
+
+
+ .heading{
+color: #ffffff;
+background-color: #6595ff;  
+border-bottom: 2px solid #1649A2;  
+border-left: 20px solid #1649A2;
+padding-left: 20px;
+border-radius: 5px;
+}
+
+.row .col-form-label{
+	font-size:13px;
+	font-weight: 600;
+	color:#1649A2
+	
+}
+
+.row .form-control{
+	font-size:12px;
+	font-weight: 600;
+	border:1.25px solid #6595ff;
+}
+
+@media (max-width: 1043px) {
+    .card-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card-container .col-md-4,
+    .card-container .col-md-8 {
+        width: 100%;
+        
+    }
+}
+
+
+@media (min-width:769px) {
+	  .card-container {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .card-container .col-md-4,
+    .card-container .col-md-8 {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}

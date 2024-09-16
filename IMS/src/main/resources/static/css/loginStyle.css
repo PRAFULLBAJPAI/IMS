@@ -1,0 +1,602 @@
+
+/*----------------------------------- LOGIN PAGE CSS  ------------------------------------------*/
+
+:root {
+	--bodybg: #DCECFE;
+	--primary-color: #6595ff;
+	--grey: #d6d6d6;
+	--placeholder: #969696;
+	--white: #fff;
+	--text: #333;
+	--slider-bg: #eff3ff;
+	--login-cta-hover:#1649A2;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: var(--bodybg);
+	font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	height: 100vh;
+	display: flex;
+}
+
+.login-container {
+	display: flex;
+	max-width: 1200px;
+	background: var(--white);
+	margin: auto;
+	width: 100%;
+	min-width: 320px;
+}
+
+
+
+.login-container .login-form {
+	width: 50%;
+	box-sizing: border-box;
+	padding: 15px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	flex: 1;
+	border-right: solid 5px #1649A2;
+}
+
+.login-container .login-form .login-form-inner {
+	max-width: 450px;
+	width: 95%;
+}
+
+.login-container .login-form .google-login-button .google-icon svg {
+	height: 20px;
+	display: flex;
+	margin-right: 10px;
+}
+
+
+
+.logoImage{	
+	width:6%;	
+}
+
+.login-container .login-form .sign-in-seperator {
+	text-align: center;
+	color: var(--placeholder);
+	position: relative;
+	margin: 30px 0 20px;
+}
+
+.login-container .login-form .sign-in-seperator span {
+	background: var(--white);
+	z-index: 1;
+	position: relative;
+	padding: 0 10px;
+	font-size: 14px;
+}
+
+.login-container .login-form .sign-in-seperator:after {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 1px;
+	background: var(--grey);
+	left: 0;
+	top: 50%;
+	z-index: 0;
+}
+
+.login-container .login-form .login-form-group {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 10px;
+}
+
+.login-container .login-form .login-form-group label {
+	font-size: 14px;
+	font-weight: 500;
+	color: var(--text);
+	margin-bottom: 10px;
+}
+
+.login-container .login-form .login-form-group input,select {
+	padding: 13px 20px;
+	box-sizing: border-box;
+	border: 1px solid var(--grey);
+	border-radius: 10px;
+	font-weight: 600;
+	font-size: 14px;
+	color: var(--text);
+	transition: linear 0.2s;
+}
+
+.login-container .login-form .login-form-group input:focus {
+	outline: none;
+	border: 1px solid #1649A2;
+}
+
+.login-container .login-form .login-form-group input::-webkit-input-placeholder {
+	color: var(--placeholder);
+	font-weight: 300;
+	font-size: 14px;
+}
+
+.login-container .login-form .login-form-group.single-row {
+	flex-direction: row;
+	justify-content: space-between;
+	padding-top: 5px;
+}
+
+/* custom checkbox */
+.login-container{
+	border-radius: 10px;
+}
+.onboarding{
+	border-radius: 10px;
+}
+.login-container .login-form .custom-check input[type="checkbox"] {
+	height: 23px;
+	width: 23px;
+	margin: 0;
+	padding: 0;
+	opacity: 1;
+	appearance: none;
+	border: 2px solid var(--primary-color);
+	border-radius: 3px;
+	background: var(--white);
+	position: relative;
+	margin-right: 10px;
+	cursor: pointer;
+}
+
+.login-container .login-form .custom-check input[type="checkbox"]:checked {
+	border: 2px solid var(--primary-color);
+	background: var(--primary-color);
+}
+
+.login-container .login-form .custom-check input[type="checkbox"]:checked:before,
+.login-container .login-form .custom-check input[type="checkbox"]:checked:after {
+	content: "";
+	position: absolute;
+	height: 2px;
+	background: var(--white);
+}
+
+.login-container .login-form .custom-check input[type="checkbox"]:checked:before {
+	width: 8px;
+	top: 11px;
+	left: 2px;
+	transform: rotate(44deg);
+}
+
+.login-container .login-form .custom-check input[type="checkbox"]:checked:after {
+	width: 14px;
+	top: 8px;
+	left: 5px;
+	transform: rotate(-55deg);
+}
+
+.login-container .login-form .custom-check input[type="checkbox"]:focus {
+	outline: none;
+}
+
+.login-container .login-form .custom-check {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.login-container .login-form .custom-check label {
+	margin: 0;
+	color: var(--text);
+	font-size: 14px;
+	font-weight: 500;
+	cursor: pointer;
+}
+
+.login-container .login-form .link {
+	color: var(--primary-color);
+	font-weight: 500;
+	text-decoration: none;
+	font-size: 14px;
+}
+
+.login-container .login-form .link:hover {
+	text-decoration: underline;
+}
+
+.login-container .login-form .login-cta {
+	color: var(--white);
+	text-decoration: none;
+	border: 1px solid var(--primary-color);
+	margin: 25px 0 35px;
+	background: var(--primary-color);
+}
+
+.login-container .login-form .login-cta:hover {
+	background: var(--login-cta-hover);
+}
+
+.login-container .onboarding {
+	flex: 1;
+	background: #ffffff;
+	display: none;
+	width: 30%;
+}
+
+.login-container .login-form .login-form-group label .required-star {
+	color: var(--primary-color);
+	font-size: 18px;
+	line-height: 10px;
+}
+
+.login-container .rounded-button {
+	display: flex;
+	width: 30%;
+	text-decoration: none;
+	padding: 10px 10px;
+	box-sizing: border-box;
+	justify-content: center;
+	font-size: 16px;
+	font-weight: 500;
+	align-items: center;
+	transition: linear 0.2s;
+	border-radius: 10px;
+}
+
+.login-container .rounded-button:hover {
+	box-shadow: 0px 0px 4px 0px var(--grey);
+}
+
+.login-container .body-text {
+	font-size: 14px;
+	font-weight: 500;
+	color: var(--text);
+}
+
+.login-container .onboarding .swiper-container {
+	width: 85%;
+	height: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.login-container .onboarding .swiper-slide {
+	text-align: center;
+	font-size: 18px;
+	font-weight: 400;
+	color: var(--text);
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	align-items: center;
+}
+
+.login-container .onboarding .swiper-pagination-bullet-active {
+	background-color: var(--primary-color);
+}
+
+.login-container .onboarding .swiper-slide {
+	flex-direction: column;
+	display: flex;
+}
+
+.login-container .onboarding .swiper-slide img {
+	margin-top:12%;
+	width:130%;
+	height: 100%;
+	margin-left: 25%;
+}
+
+.login-container .onboarding .slide-content {
+	width: 60%;
+}
+
+.login-container .onboarding .slide-content h2 {
+	font-size: 22px;
+	font-weight: 500;
+	margin-bottom: 15px;
+}
+
+.login-container .onboarding .slide-content p {
+	font-size: 16px;
+	line-height: 22px;
+	font-weight: 300;
+}
+
+.swiper-pagination-fraction,
+.swiper-pagination-custom,
+.swiper-container-horizontal>.swiper-pagination-bullets {
+	bottom: 30px;
+}
+
+.login-container .login-form .login-form-inner h1 {
+	margin-bottom: 20px;
+	margin-top: 10px;
+}
+
+/*---------------------------------Footer---------------------------------------------------------------*/
+.background {
+	height: 40px;
+	background-color: #1649A2;
+
+}
+
+.custom-font-size {
+	font-size: 14px;
+	font-weight: 900;
+
+}
+
+
+/*--------------------------------------FORGOT PASSWORD---------------------------------------------*/
+
+.card {
+	position: relative;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	min-width: 0;
+	word-wrap: break-word;
+	background-color: #fff;
+	background-clip: border-box;
+	border: 2px solid #1649A2;
+	border-radius: 5px;
+	box-shadow: 20px 20px 10px grey;
+}
+
+.card-body {
+	-webkit-box-flex: 1;
+	-webkit-flex: 1 1 auto;
+	-ms-flex: 1 1 auto;
+	flex: 1 1 auto;
+}
+
+.card-header {
+	padding: 0;
+	margin-bottom: 0;
+	background-color: rgba(0, 0, 0, 0.03);
+	border-bottom: 2px solid #1649A2;
+	text-align: center;
+}
+
+.contact-form .form-field {
+	position: relative;
+	margin: 20px 0;
+}
+
+.contact-form .input-text {
+	display: block;
+	width: 100%;
+	height: 40px;
+	border-width: 0 0 2px 0;
+	border-color: #6595ff;
+	font-size: 16px;
+	line-height: 15px;
+	font-weight: 400;
+}
+
+.contact-form .input-text:focus {
+	outline: none;
+}
+
+.contact-form .input-text:focus+.label,
+.contact-form .input-text.not-empty+.label {
+	-webkit-transform: translateY(-8px);
+	transform: translateY(-8px);
+}
+
+.contact-form .label {
+	position: absolute;
+	left: 15px;
+	bottom: 15px;
+	font-size: 18px;
+	line-height: 40px;
+	font-weight: 500;
+	color: #1649A2;
+	cursor: text;
+	transition: -webkit-transform .2s ease-in-out;
+	transition: transform .2s ease-in-out;
+	transition: transform .2s ease-in-out, -webkit-transform .2s ease-in-out;
+}
+
+.contact-form .submit-btn {
+	display: inline-block;
+	background-color: #6595ff;
+	color: #fff;
+	text-transform: uppercase;
+	border-radius: 5px;
+	font-size: 15px;
+	padding: 5px 10px;
+	border: none;
+	width: 120px;
+	cursor: pointer;
+	float: right;
+
+}
+
+.contact-form .submit-btn:hover {
+	background-color: #1649A2;
+}
+
+/*-------------------------------------- MODAL STYLING---------------------------------------------------*/
+
+.modal-dialog {
+	max-width: 100% !important;
+	margin-top: 0;
+	overflow-y: hidden
+}
+
+.modal-body {
+	margin-top: 5%;
+	height: 100vh;
+	overflow-y: auto;
+
+}
+
+.modal-content {
+	width: 100%;
+	background: rgba(255, 255, 255, 0.5);
+	backdrop-filter: blur(10px);
+	border: none;
+	height: 100vh;
+	overflow: hidden;
+}
+
+.modal-header {
+	height: 50px;
+}
+
+
+
+
+.otp-field {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+}
+
+.otp-field input {
+	width: 10%;
+	font-size: 20px;
+	padding: 10px;
+	text-align: center;
+	border-radius: 5px;
+	margin: 2px;
+	border: 2px solid #55525c;
+	font-weight: bold;
+	color: #1d1d1d;
+	outline: none;
+	transition: all 0.1s;
+}
+
+.otp-field input:focus {
+	border: 2px solid #1649A2;
+	box-shadow: 0 0 2px 2px #6595ff;
+}
+
+.disabled {
+	opacity: 0.5;
+}
+
+.space {
+	margin-right: 1rem !important;
+}
+
+
+/*----------------------------------  MEDIA QUERIES  ---------------------------------- */
+
+
+@media screen and (min-width: 769px) {
+	.login-container .onboarding {
+		display: flex;
+	}
+}
+
+@media screen and (max-width: 769px) {
+
+	.login-container .login-form {
+		margin-top: 7%;
+	}
+
+
+	.login-container .onboarding .swiper-slide img {
+		width: 110%;
+		height: 110%;
+		margin-top: 20%;
+		margin-left: 5%;
+	}
+
+	.navbar-brand.text-center {
+		width: 100%;
+		text-align: center !important;
+		margin-top: -1.5%;
+	}
+}
+
+@media screen and (width: 769px) {
+	.login-container .onboarding {
+		order: 1;
+	}
+
+	.login-container .login-form {
+		order: 0;
+
+	}
+
+	.login-container {
+		height: 100vh;
+	}
+}
+
+@media screen and (max-width: 580px) {
+	.login-container {
+		flex-direction: column;
+		height: 100vh;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.login-container .login-form {
+		width: 100%;
+		border-right: none;
+		border-bottom: solid 3px #1649A2;
+		padding: 25px;
+		max-width: 100%;
+		margin-top: 15%;
+	}
+
+	.login-container .onboarding {
+		width: 100%;
+	}
+
+	.login-container .rounded-button {
+		width: 100%;
+	}
+
+
+}
+
+
+@media screen and (max-width: 850px) {
+	.otp-field input {
+		font-size: 16px;
+		width: 20%;
+		padding: 8px;
+	}
+
+	#enterOtp {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 426px) {
+	.otp-field input {
+		font-size: 13px;
+		width: 25%;
+		padding: 4px;
+	}
+
+	#enterOtp {
+		display: none;
+	}
+}
